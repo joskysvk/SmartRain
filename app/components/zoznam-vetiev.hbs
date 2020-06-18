@@ -1,0 +1,38 @@
+<div class="">
+    {{#each this.sortedLines as |line|}}
+    <div class="row">
+        <h3 class="col-6">
+            <LinkTo @route='vetva' @model={{line}}>
+            {{line.id}}
+            </LinkTo>
+        </h3>
+    </div>
+    <div class='row'>
+        <div class="col-4 mb-2">
+            <div>
+                Polievanie
+            </div>
+            <OnOff @disabled={{or line.isAutomat line.saving}} @loading={{line.saving}} @checked={{line.isOn}} @onChange={{action this.onChange line}}/>
+        </div>
+        <div class="col-8 mb-2">
+            <div>
+                Automatika
+            </div>
+            <OnOff @disabled={{line.automatSaving}} @loading={{line.automatSaving}} @checked={{line.isAutomat}} @onChange={{action this.automatChanged line}}/>
+        </div>
+        <div class="col-4 mb-2">
+            <div>
+                Cas [min]
+            </div>
+            <input class='form-control' inputmode='numeric' type='number' pattern='[0-9]*' min='1' disabled={{line.isAutomat}} value={{line.openTime}} {{on 'input' (fn this.changeOpenTime line)}}/>
+        </div>
+        <div class="col-8 mb-2">
+            <div>
+                Plan
+            </div>
+            <CronEdit @value={{line.plan}} @onChange={{action this.changePlan line}}/>
+        </div>
+    </div>
+    <hr />
+    {{/each}}
+</div>

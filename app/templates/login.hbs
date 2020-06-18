@@ -1,0 +1,21 @@
+{{#if this.loginIsRunning}}
+    <div class='text-center mt-5'>
+        <FaIcon class='login-icon' @icon='cloud-showers-heavy' />
+        <h1 class="h3 mb-3 font-weight-normal">Please Wait...</h1>
+    </div>
+{{else}}
+    <form class="form-signin text-center mt-5" {{on 'submit' this.login}}>
+        <FaIcon class='login-icon' @icon='cloud-showers-heavy' />
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputLogin" class="sr-only">Login</label>
+        <input id='inputLogin' autofocus class='form-control' placeholder='Login' type='text' value={{this.name}} {{on 'input' this.changeName}}/>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input id='inputPassword' autofocus class='form-control' placeholder='Password' type='password' value={{this.password}} {{on 'input' this.changePassword}}/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        {{#if this.errorMessage}}
+            <div>
+                {{this.errorMessage}}
+            </div>
+        {{/if}}
+    </form>
+{{/if}}

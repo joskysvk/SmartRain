@@ -1,0 +1,16 @@
+<h1>{{@vetva.id}}</h1>
+<h3>Minuty</h3>
+<select>
+    <option>Kazdu minutu</option>
+    <option>Kazdu parnu minutu</option>
+    <option>Kazdu neparnu minutu</option>
+    <option>Kazdych 5 minut</option>
+    <option>Kazdych 15 minut</option>
+    <option>Kazdych 30 minut</option>
+</select>
+<select multiple>
+    {{#each minutes as |minute|}}
+        <option value="">{{minute}}</option>
+    {{/each}}
+</select>
+<LinkTo @route='zoznam'>Späť</LinkTo>

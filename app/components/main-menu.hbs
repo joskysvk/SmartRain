@@ -1,0 +1,34 @@
+<BsNavbar
+  @type="light"
+  @backgroundColor="light"
+  @collapsed={{true}}
+  @onCollapse={{action (mut collapsed) true}}
+  @onExpand={{action (mut collapsed) false}} as |navbar|>
+  <div class="container">
+      <div class="navbar-header">
+          {{#if messages.connected}}
+              {{navbar.toggle}}
+          {{/if}}
+          {{#link-to "zoznam" class="navbar-brand"}}
+              <FaIcon @icon='cloud-showers-heavy' />
+              SmartRain
+          {{/link-to}}
+      </div>
+      {{#if messages.connected}}
+          <navbar.content>
+              <navbar.nav as |nav|>
+                  <nav.item>
+                      <nav.link-to @route="zoznam">Zoznam Vetiev</nav.link-to>
+                  </nav.item>
+              </navbar.nav>
+          </navbar.content>
+          <navbar.content class='flex-grow-0'>
+            <navbar.nav as |nav|>
+              <nav.item>
+                  <BsButton {{on 'click' this.logout}} @type='outline-danger'>Logout</BsButton>
+              </nav.item>
+            </navbar.nav>
+          </navbar.content>
+      {{/if}}
+  </div>
+</BsNavbar>

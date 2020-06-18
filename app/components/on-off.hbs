@@ -1,0 +1,9 @@
+<div {{on 'click' this.onClick}} class='on-off {{if @checked "is-on" "is-off"}} {{if @loading "is-loading"}} {{if @disabled "is-disabled"}}'>
+    <div class='on-off--off bg-custom'>OFF</div>
+    <div class='on-off--on bg-success'>ON</div>
+    <BsButton class='on-off--button' @size='sm' @type='secondary'>
+        {{#if @loading}}
+            <FaIcon @icon='spinner' @spin={{true}} @fixedWidth={{true}}/>
+        {{/if}}
+    </BsButton>
+</div>

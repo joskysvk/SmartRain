@@ -1,0 +1,132 @@
+
+@import "ember-bootstrap/bootstrap";
+#ember-basic-dropdown-wormhole .ember-basic-dropdown-content{
+    z-index:1100;
+}
+
+.cron-edit{
+    display: flex;
+    flex-direction: row;
+
+    &--button{
+        font-size:15px;
+        line-height:1em;
+        padding:0px 4px;
+        height:38px;
+        flex-grow:1;
+        border-radius:0px;
+        border-left-width:0px;
+        &:first-child{
+            border-left-width:1px;
+        }
+    }
+}
+
+.form-signin{
+    max-width:330px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.login-icon{
+    font-size: 60px;
+}
+
+.vetva{
+    &--row{
+        .desc{
+            display: inline-block;
+            width: 150px;
+        }
+
+        >.form-control{
+            display:inline-block;
+            width:auto;
+        }
+    }
+}
+
+.list-lines{
+    &-line{
+        padding-bottom:10px;
+        padding-top:10px;
+        border-bottom:1px solid #ccc;
+        &:first-child{
+            border-top:1px solid #ccc;
+        }
+
+        &--name{
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 992px){
+            .desc{
+                display: inline-block;
+                width: 150px;
+            }
+            &--name, &--ison, &--isautomat, &--plan{
+                padding-top:8px;
+                padding-bottom:8px;
+            }
+        }
+    }
+}
+
+        .bg-custom{
+            background-color:#aaa;
+        }
+.on-off{
+    display: inline-flex;
+    position:relative;
+    &.is-disabled{
+        opacity:0.6;
+    }
+    &:not(.is-disabled){
+        cursor:pointer;
+    }
+    &.is-disabled, &.is-disabled .on-off--button{
+        cursor:not-allowed;
+    }
+
+    .on-off--button{
+        position:absolute;
+        top:0px;
+    }
+
+    &.is-on{
+        .on-off--button{
+            left:0px;
+        }
+    }
+   
+    &.is-off{
+        .on-off--button{
+            left:43px;
+        }
+    }
+
+    &--off{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    &--on{
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    &--off,&--on{
+        width:45px;
+        text-align:center;
+        color: white;
+        font-size:21px;
+    }
+    
+    &--button{
+        width: 47px;
+        height:31px;
+        transition: left .2s;
+    }
+}
+
+@import "ember-power-select";
