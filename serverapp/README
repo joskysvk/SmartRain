@@ -1,0 +1,15 @@
+
+curl -X POST --data @smartrain.conf http://localhost:8080/cfgwrite
+
+Pri prvom spusteni je potrebne nakonfigurovat vetvy. Priradenie "programovej" vetny s popisom a menom k realnemu pinu.
+    Odosle sa json (pre moju zavlaju je to json ako je v subore smartrain.conf) na api http://localhost:8080/cfgwrite cez metodu POST
+        curl -X POST --data @smartrain.conf http://localhost:8080/cfgwrite
+    Po odoslani sa na zaklade jsonu vytvoria vetvy a samotny json sa ulozi na disk. 
+Po opatvnom spustení sa tento subor nacita z disku a bude zavlaha bude plne ovladatelna.
+Pre kontrolu ci je nastavena spravne zavlahova jednotka Smartrain je mozne cez api http://localhost:8080/cfgread 
+    nacitat konfiguraciu a tak zistit nastavenie.
+    curl 'http://localhost:8080/cfgread?pass=aaaa'
+    je potrebne zadat spravne heslo
+Pre zmenu stavu ventila jednotlivej vetvy je mozne tento stav zmenit cez http GET 
+    curl 'http://zavlaha:8080/api?vetva=Kvapkova&stav=1&pass=aaaa'
+    Pre zistenie pomenovania vetiev pouzi cfgread 

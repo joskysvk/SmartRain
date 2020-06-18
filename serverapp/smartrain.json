@@ -1,0 +1,47 @@
+[
+  {
+    "io": "out",
+    "name": "LED",
+    "desc": "TESTVACIA LEDKA",
+    "pin": 24,
+    "automat": false,
+    "openTime": 3,
+    "plan": "*/3 * * * *"
+  },
+  {
+    "io": "out",
+    "name": "Kvapkova",
+    "desc": "Zavlazovacia vetva kvapkovej zavlahy",
+    "pin": 14,
+    "automat": false,
+    "openTime": 1,
+    "plan": "*/3 * * * *"
+  },
+  {
+    "io": "out",
+    "name": "Predzahradka",
+    "desc": "Zavlazaovacia vetva travnika predzahradky",
+    "pin": 15,
+    "automat": false,
+    "openTime": 1,
+    "plan": "* * * * *"
+  },
+  {
+    "io": "out",
+    "name": "Ovocna",
+    "desc": "Zavlazovacia vetva travnika ovocnej zavlahy",
+    "pin": 18,
+    "automat": false,
+    "openTime": 1,
+    "plan": "* * * * *"
+  },
+  {
+    "io": "out",
+    "name": "Centralny",
+    "desc": "Zavlazovacia vetva centralneho travnika",
+    "pin": 23,
+    "automat": false,
+    "openTime": 1,
+    "plan": "*/2 * * * *"
+  }
+]
