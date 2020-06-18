@@ -7,7 +7,6 @@ let fs = require('fs');
 let Gpio = require('onoff').Gpio;
 let CronJob = require('cron').CronJob;
 let vetvy = []
-let SocketName=""
 let io = {}
 let pass = ""
 let user = ""
@@ -383,6 +382,14 @@ function ioConnectd(socket)
     });
 }
 
+function help(msg="")
+{
+    if(msg != "") console.log("Warning: " + msg)
+    console.log("SmartRain - automaticka zavlaha");
+    console.log("smartRain.js -p [port] -u [user] -s [pass]")
+    process.exit();
+}
+
 function main()
 {
     Initialize();
@@ -390,7 +397,9 @@ function main()
     let port = argv.p;
     pass = argv.s;
     user = argv.u;
-    SocketName = pass;
+    hlp = argv.h;
+    if(hlp) help();
+    if(port === undefined) help("Port is not defined")
     try{
         let webServer = http.createServer(handler);
         webServer.listen(Number(port)); 

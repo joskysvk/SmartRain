@@ -1,7 +1,7 @@
 <div class='cron-edit'>
     <BsButton @outline={{true}} @type='secondary' class='cron-edit--button' type='xs' @onClick={{action (mut modal1) true}}>
         <div class='cron-edit--button-label'>M</div>
-        <div class='cron-edit--button-value'>*</div>
+        <div class='cron-edit--button-value'>{{minuteValue}}</div>
     </BsButton>
     <BsModalSimple
     @open={{modal1}}
